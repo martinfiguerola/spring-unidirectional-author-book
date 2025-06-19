@@ -3,6 +3,7 @@ package com.martin.authorbook.controller;
 import com.martin.authorbook.dto.AuthorRequestDTO;
 import com.martin.authorbook.dto.AuthorResponseDTO;
 import com.martin.authorbook.service.AuthorService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +21,7 @@ public class AuthorController {
     }
 
     @PostMapping
-    public ResponseEntity<AuthorResponseDTO> createAuthor (@RequestBody AuthorRequestDTO authorRequestDTO) {
+    public ResponseEntity<AuthorResponseDTO> createAuthor (@Valid @RequestBody AuthorRequestDTO authorRequestDTO) {
         AuthorResponseDTO responseDTO = authorService.save(authorRequestDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(responseDTO);
     }
