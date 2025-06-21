@@ -55,4 +55,17 @@ public class AuthorServiceImpl implements AuthorService{
         // Step 2: If exists, convert to DTO and return it
         return optionalAuthor.map(AuthorMapper::toBookDTO);
     }
+
+    @Override
+    public Boolean deleteById(Long id) {
+        // Step 1: Get Author Entity Optional from the database
+        Optional<Author> optionalAuthor = repository.findById(id);
+
+        // Step 2: If exists, delete it and return true
+        return optionalAuthor
+                .map(author -> {
+                    repository.delete(author);
+                    return true;
+                }).orElse(false);
+    }
 }
