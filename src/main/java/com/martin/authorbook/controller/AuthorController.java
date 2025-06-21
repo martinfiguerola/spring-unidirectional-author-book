@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -45,6 +46,13 @@ public class AuthorController {
     public ResponseEntity<String> deleteAuthor (@PathVariable Long id) {
         if (authorService.deleteById(id)) return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User with the given ID does not exist.");
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<AuthorResponseDTO> updateAuthor (@PathVariable Long id, @RequestBody AuthorRequestDTO authorRequestDTO) {
+        return authorService.update(id, authorRequestDTO)
+                .map(authorResponseDTO -> ResponseEntity.status(HttpStatus.OK).body(authorResponseDTO))
+                .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
     }
 
 

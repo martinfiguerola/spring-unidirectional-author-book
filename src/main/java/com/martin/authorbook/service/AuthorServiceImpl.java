@@ -68,4 +68,19 @@ public class AuthorServiceImpl implements AuthorService{
                     return true;
                 }).orElse(false);
     }
+
+    @Override
+    public Optional<AuthorResponseDTO> update(Long id, AuthorRequestDTO authorRequestDTO) {
+        // Step 1: Get Author entity Optional from the database
+        Optional<Author> optionalAuthor = repository.findById(id);
+
+        // If exists, se modifica del author que encontramos,
+        // los campos que corresponden a los que nos pasaron por body
+        return optionalAuthor.map( existAuthor -> {
+            existAuthor.setFirstname(authorRequestDTO.getFirstname());
+            existAuthor.setLastname(authorRequestDTO.getLastname());
+            Author savedAuthor = repository.save(existAuthor);
+            return AuthorMapper.toDTO(savedAuthor);
+        });
+    }
 }

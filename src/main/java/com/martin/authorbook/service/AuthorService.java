@@ -14,5 +14,6 @@ public interface AuthorService {
     List<AuthorResponseDTO> findAll ();
     Optional<AuthorBookResponseDTO> findById (Long id);
     Boolean deleteById (Long id);
+    Optional<AuthorResponseDTO> update (Long id, AuthorRequestDTO authorRequestDTO);
 
 }
