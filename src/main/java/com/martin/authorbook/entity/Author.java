@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -23,7 +24,7 @@ public class Author {
 
     @OneToMany
     @JoinColumn(name = "author_id")
-    private List<Book> books;
+    private List<Book> books = new ArrayList<>();
 
 
 }
