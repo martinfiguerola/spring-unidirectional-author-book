@@ -2,15 +2,11 @@ package com.martin.authorbook.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
 @Entity
 @Table(name = "books")
 @Getter @Setter
-@NoArgsConstructor
-@ToString
 public class Book {
 
     @Id
@@ -19,4 +15,12 @@ public class Book {
     private String title;
     private String isbn;
 
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", isbn='" + isbn + '\'' +
+                '}';
+    }
 }

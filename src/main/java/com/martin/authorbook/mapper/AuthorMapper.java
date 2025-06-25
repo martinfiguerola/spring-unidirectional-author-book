@@ -14,6 +14,7 @@ public class AuthorMapper {
         Author author = new Author();
         author.setFirstname(authorRequestDTO.getFirstname());
         author.setLastname(authorRequestDTO.getLastname());
+        author.setBooks(authorRequestDTO.getBooks());
         return author;
     }
 
