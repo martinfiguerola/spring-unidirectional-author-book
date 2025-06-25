@@ -1,5 +1,6 @@
 package com.martin.authorbook.mapper;
 
+import com.martin.authorbook.dto.BookRequestDTO;
 import com.martin.authorbook.dto.BookResponseDTO;
 import com.martin.authorbook.entity.Book;
 
@@ -12,5 +13,11 @@ public class BookMapper {
         bookResponseDTO.setIsbn(book.getIsbn());
 
         return bookResponseDTO;
+    }
+    public static Book fromDTO (BookRequestDTO bookRequestDTO) {
+        Book book = new Book();
+        book.setTitle(bookRequestDTO.getTitle());
+        book.setIsbn(bookRequestDTO.getIsbn());
+        return book;
     }
 }
