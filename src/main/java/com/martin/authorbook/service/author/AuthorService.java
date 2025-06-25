@@ -1,9 +1,9 @@
-package com.martin.authorbook.service;
+package com.martin.authorbook.service.author;
 
 
-import com.martin.authorbook.dto.AuthorBookResponseDTO;
-import com.martin.authorbook.dto.AuthorRequestDTO;
-import com.martin.authorbook.dto.AuthorResponseDTO;
+import com.martin.authorbook.dto.author.AuthorBookResponseDTO;
+import com.martin.authorbook.dto.author.AuthorRequestDTO;
+import com.martin.authorbook.dto.author.AuthorResponseDTO;
 
 import java.util.List;
 import java.util.Optional;

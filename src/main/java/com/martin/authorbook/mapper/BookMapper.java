@@ -1,7 +1,7 @@
 package com.martin.authorbook.mapper;
 
-import com.martin.authorbook.dto.BookRequestDTO;
-import com.martin.authorbook.dto.BookResponseDTO;
+import com.martin.authorbook.dto.book.BookRequestDTO;
+import com.martin.authorbook.dto.book.BookResponseDTO;
 import com.martin.authorbook.entity.Book;
 
 public class BookMapper {

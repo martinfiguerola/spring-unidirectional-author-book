@@ -1,9 +1,9 @@
 package com.martin.authorbook.controller;
 
-import com.martin.authorbook.dto.AuthorBookResponseDTO;
-import com.martin.authorbook.dto.AuthorRequestDTO;
-import com.martin.authorbook.dto.AuthorResponseDTO;
-import com.martin.authorbook.service.AuthorService;
+import com.martin.authorbook.dto.author.AuthorBookResponseDTO;
+import com.martin.authorbook.dto.author.AuthorRequestDTO;
+import com.martin.authorbook.dto.author.AuthorResponseDTO;
+import com.martin.authorbook.service.author.AuthorService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

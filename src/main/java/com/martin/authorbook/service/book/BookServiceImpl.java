@@ -1,14 +1,14 @@
-package com.martin.authorbook.service;
+package com.martin.authorbook.service.book;
 
-import com.martin.authorbook.dto.BookRequestDTO;
-import com.martin.authorbook.dto.BookResponseDTO;
+import com.martin.authorbook.dto.book.BookRequestDTO;
+import com.martin.authorbook.dto.book.BookResponseDTO;
 import com.martin.authorbook.entity.Book;
 import com.martin.authorbook.mapper.BookMapper;
 import com.martin.authorbook.repository.BookRepository;
 import org.springframework.stereotype.Service;
 
 @Service
-public class BookServiceImpl implements BookService{
+public class BookServiceImpl implements BookService {
 
     private final BookRepository repository;
 

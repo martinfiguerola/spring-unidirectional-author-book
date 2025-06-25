@@ -1,4 +1,4 @@
-package com.martin.authorbook.dto;
+package com.martin.authorbook.dto.book;
 
 import lombok.Getter;
 import lombok.Setter;

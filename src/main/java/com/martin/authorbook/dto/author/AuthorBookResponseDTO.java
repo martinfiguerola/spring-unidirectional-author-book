@@ -1,5 +1,6 @@
-package com.martin.authorbook.dto;
+package com.martin.authorbook.dto.author;
 
+import com.martin.authorbook.dto.book.BookResponseDTO;
 import lombok.Getter;
 import lombok.Setter;
 

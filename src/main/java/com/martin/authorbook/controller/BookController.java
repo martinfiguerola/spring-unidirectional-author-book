@@ -1,9 +1,8 @@
 package com.martin.authorbook.controller;
 
-import com.martin.authorbook.dto.BookRequestDTO;
-import com.martin.authorbook.dto.BookResponseDTO;
-import com.martin.authorbook.entity.Book;
-import com.martin.authorbook.service.BookService;
+import com.martin.authorbook.dto.book.BookRequestDTO;
+import com.martin.authorbook.dto.book.BookResponseDTO;
+import com.martin.authorbook.service.book.BookService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

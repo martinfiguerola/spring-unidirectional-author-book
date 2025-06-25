@@ -1,7 +1,7 @@
-package com.martin.authorbook.service;
-import com.martin.authorbook.dto.AuthorBookResponseDTO;
-import com.martin.authorbook.dto.AuthorRequestDTO;
-import com.martin.authorbook.dto.AuthorResponseDTO;
+package com.martin.authorbook.service.author;
+import com.martin.authorbook.dto.author.AuthorBookResponseDTO;
+import com.martin.authorbook.dto.author.AuthorRequestDTO;
+import com.martin.authorbook.dto.author.AuthorResponseDTO;
 import com.martin.authorbook.entity.Author;
 import com.martin.authorbook.mapper.AuthorMapper;
 import com.martin.authorbook.repository.AuthorRepository;
@@ -12,7 +12,7 @@ import java.util.Optional;
 
 
 @Service
-public class AuthorServiceImpl implements AuthorService{
+public class AuthorServiceImpl implements AuthorService {
 
     private final AuthorRepository repository;
 
@@ -53,7 +53,7 @@ public class AuthorServiceImpl implements AuthorService{
         Optional<Author> optionalAuthor = repository.findById(id);
 
         // Step 2: If exists, convert to DTO and return it
-        return optionalAuthor.map(AuthorMapper::toBookDTO);
+        return optionalAuthor.map(AuthorMapper::toAuthorWithBooksDTO);
     }
 
     @Override
