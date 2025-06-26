@@ -44,7 +44,7 @@ public class AuthorController {
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteAuthor (@PathVariable Long id) {
         if (authorService.deleteById(id)) return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User with the given ID does not exist.");
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Author with the given ID does not exist.");
     }
 
     @PutMapping("/{id}")
