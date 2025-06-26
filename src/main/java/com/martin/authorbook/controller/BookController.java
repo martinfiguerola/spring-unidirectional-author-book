@@ -2,8 +2,8 @@ package com.martin.authorbook.controller;
 
 import com.martin.authorbook.dto.book.BookRequestDTO;
 import com.martin.authorbook.dto.book.BookResponseDTO;
-import com.martin.authorbook.entity.Book;
 import com.martin.authorbook.service.book.BookService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,7 +23,7 @@ public class BookController {
 
 
     @PostMapping
-    public ResponseEntity<BookResponseDTO> createBook (@RequestBody BookRequestDTO book) {
+    public ResponseEntity<BookResponseDTO> createBook (@Valid @RequestBody BookRequestDTO book) {
         BookResponseDTO bookResponseDTO = service.save(book);
         return ResponseEntity.status(HttpStatus.CREATED).body(bookResponseDTO);
     }
@@ -43,7 +43,7 @@ public class BookController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<BookResponseDTO> updateBook (@PathVariable Long id, @RequestBody BookRequestDTO bookRequestDTO) {
+    public ResponseEntity<BookResponseDTO> updateBook (@Valid @PathVariable Long id, @RequestBody BookRequestDTO bookRequestDTO) {
         Optional<BookResponseDTO> optionalBookResponseDTO = service.update(id, bookRequestDTO);
         return optionalBookResponseDTO
                 .map( responseDTO ->  ResponseEntity.status(HttpStatus.OK).body(responseDTO))
