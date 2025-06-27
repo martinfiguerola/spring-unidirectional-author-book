@@ -46,9 +46,34 @@ API will be available at: http://localhost:8080
 
 ---
 
-## 🌐 API Endpoints
+## 🔗 API Endpoints
+
+### 📚 Books
+
+| Method  | Endpoint          | Description                   | Request Body        | Response Body           |
+|---------|-------------------|-------------------------------|---------------------|-------------------------|
+| `GET`   | `/api/books`      | Retrieve all books            | —                   | `List<BookResponseDTO>` |
+| `GET`   | `/api/books/{id}` | Retrieve a book by its ID     | —                   | `BookResponseDTO`       |
+| `POST`  | `/api/books`      | Create a new book             | `BookRequestDTO`    | `BookResponseDTO`       |
+| `PUT`   | `/api/books/{id}` | Update an existing book       | `BookRequestDTO`    | `BookResponseDTO`       |
+| `DELETE`| `/api/books/{id}` | Delete a book by its ID       | —                   | —                       |
 
 ---
 
+### 👤 Authors
+
+| Method  | Endpoint             | Description                                | Request Body          | Response Body             |
+|---------|----------------------|--------------------------------------------|-----------------------|---------------------------|
+| `GET`   | `/api/authors`       | Retrieve all authors                       | —                     | `List<AuthorResponseDTO>` |
+| `GET`   | `/api/authors/{id}`  | Retrieve an author (with books)            | —                     | `AuthorBookResponseDTO`   |
+| `POST`  | `/api/authors`       | Create a new author (optional: with books) | `AuthorRequestDTO`    | `AuthorResponseDTO`       |
+| `PUT`   | `/api/authors/{id}`  | Update an existing author                  | `AuthorRequestDTO`    | `AuthorResponseDTO`       |
+| `DELETE`| `/api/authors/{id}`  | Delete an author by its ID                 | —                     | —                         |
+
+---
+
+
 ## 📄 License
 This project is open-source and available under the MIT License.
+
+
